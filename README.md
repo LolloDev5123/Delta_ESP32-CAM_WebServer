@@ -1,6 +1,15 @@
 # Delta ESP32-CAM WebServer &nbsp;&nbsp; <span title="ESP EYE">![ESP-EYE logo](extras/logo.svg)</span>
 ### A fork of [ESP32-CAM_MJPEG2SD](https://github.com/s60sc/ESP32-CAM_MJPEG2SD/releases/tag/V8.8) with random modifications I deem cool
 
+## Objectives
+- [ ] Modify Web Server style to look modern & different
+- [ ] Add motion detection JS Notifications
+- [ ] Add some ESP32 Stats in main page (temperature, ram, etc.)
+- [ ] Improve support for BME280 Sensor
+- [ ] Mesh networking with other cameras running this firmware
+
+#  
+
 ESP32 / ESP32S3 Camera application to record JPEGs to SD card as AVI files and playback to browser as an MJPEG stream. The AVI format allows recordings to replay at correct frame rate on media players. If a microphone is installed then a WAV file is also created and stored in the AVI file. 
 
 For better functionality and performance, use one of the new ESP32S3 camera boards, eg Freenove ESP32S3 Cam, ESP32S3 XIAO Sense.
