@@ -7,6 +7,7 @@
 - [ ] Add some ESP32 Stats in main page (temperature, ram, etc.)
 - [ ] Improve support for BME280 Sensor
 - [ ] Mesh networking with other cameras running this firmware
+- [ ] Remove code not suited for our use case (rover controls, timelapse, FTP, etc.)
 #  
 
 ESP32 / ESP32S3 Camera application to record JPEGs to SD card as AVI files and playback to browser as an MJPEG stream. The AVI format allows recordings to replay at correct frame rate on media players. If a microphone is installed then a WAV file is also created and stored in the AVI file. 
