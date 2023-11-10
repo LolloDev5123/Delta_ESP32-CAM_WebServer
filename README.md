@@ -1,4 +1,4 @@
-# Delta ESP32-CAM WebServer &nbsp;&nbsp; <span title="ESP EYE">![ESP-EYE logo](assets/logo.svg)</span>
+# Delta ESP32-CAM WebServer &nbsp;&nbsp; <span title="ESP EYE">![ESP-EYE logo](extras/logo.svg)</span>
 ### A fork of [ESP32-CAM_MJPEG2SD](https://github.com/s60sc/ESP32-CAM_MJPEG2SD/releases/tag/V8.8) with random modifications I deem cool
 
 ESP32 / ESP32S3 Camera application to record JPEGs to SD card as AVI files and playback to browser as an MJPEG stream. The AVI format allows recordings to replay at correct frame rate on media players. If a microphone is installed then a WAV file is also created and stored in the AVI file. 
