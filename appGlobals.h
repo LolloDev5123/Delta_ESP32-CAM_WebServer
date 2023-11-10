@@ -66,8 +66,8 @@ CAMERA_MODEL_ESP32S3_CAM_LCD
 #define DOT_MAX 50
 //#define REPORT_IDLE // core processor idle time monitoring
  
-#define APP_NAME "ESP-CAM_MJPEG" // max 15 chars
-#define APP_VER "9.0"
+#define APP_NAME "ΔAP" // max 15 chars
+#define APP_VER "1.0"
 
 #define FB_BUFFERS 2 // stream / record
 #define SUSTAIN_CLIENTS 1 // stream, playback, download. 
@@ -83,7 +83,7 @@ CAMERA_MODEL_ESP32S3_CAM_LCD
 #define GITHUB_URL ""
 #else
 #define STORAGE SD_MMC
-#define GITHUB_URL "https://raw.githubusercontent.com/s60sc/ESP32-CAM_MJPEG2SD/master"
+#define GITHUB_URL "https://github.com/LolloDev5123/Delta_ESP32-CAM_WebServer/master"
 #endif
 #define RAMSIZE (1024 * 8) // set this to multiple of SD card sector size (512 or 1024 bytes)
 #define CHUNKSIZE (1024 * 4)
