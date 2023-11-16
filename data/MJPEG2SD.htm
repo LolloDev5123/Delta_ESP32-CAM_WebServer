@@ -8,15 +8,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>ESP32-CAM_MJPEG2SD</title>
+    <title>Delta ESP32-CAM WebServer</title>
     <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80">📷</text></svg>'>
     
     <style>
+   
       :root {
         /* colors used on web pages - see https://www.w3schools.com/colors/colors_names.asp */
         --buttonReady: crimson;
-        --buttonActive: ForestGreen;
-        --buttonHover: green;
+        --buttonActive: #1c1c1c;
+        --buttonHover: #ae1030;
         --buttonText: white;
         --buttonLabel: black;
         --itemInactive: gray;
@@ -472,7 +473,7 @@
 
       .navtop{
         list-style: none;
-        border: 1px solid var(--itemBorder);
+        /*! border: 1px solid var(--itemBorder); */
         border-radius: var(--buttonQuart);
         padding: var(--buttonQuart);
         margin-top: var(--buttonHalf);
@@ -491,7 +492,7 @@
         padding: var(--buttonHalf);
         border-radius: 0 var(--buttonQuart) var(--buttonQuart) var(--buttonQuart);
         margin-bottom: var(--buttonQuart);
-        border: 1px solid var(--itemBorder);
+        /*! border: 1px solid var(--itemBorder); */
       }
       nav.menu.buttons {
         min-width: calc(var(--buttonSize) * 25);
@@ -508,10 +509,10 @@
         width: var(--buttonDbl);
         height: var(--buttonDbl);
         margin: var(--buttonHalf) var(--buttonHalf); var(--buttonHalf) var(--buttonHalf);
-        border: 1px solid var(--itemBorder);
+        border: 2px solid crimson;
         border-radius: var(--buttonQuart);
         cursor: pointer;
-        font-size: calc(var(--buttonSize) * 1.5);
+        font-size: calc(var(--buttonSize) * 1.9);
         padding: var(--buttonQuart) var(--buttonQuart) var(--buttonQuart) var(--buttonQuart);
         background: var(--buttonReady);
       }
@@ -534,11 +535,11 @@
       
       .nav-toggle {
         margin: 0 0 var(--buttonQuart) var(--buttonQuart);
-        font-size:var(--headingSize);
+        font-size:calc(var(--headingSize) * 1.2);
         display: block;
         margin-bottom: calc(var(--buttonSize) * 3/4);
         padding-bottom: var(--buttonHalf);
-        border-bottom: 1px solid var(--itemBorder);
+        /*! border-bottom: 1px solid var(--itemBorder); */
       }
                   
       section#main {
@@ -563,7 +564,7 @@
         bottom: 0;
         width: 97%;
         min-width: calc(var(--buttonSize) * 20);
-        background: var(--menuBackground);
+        /*! background: var(--menuBackground); */
         margin-top: 0px;
         padding: var(--buttonQuart) var(--buttonHalf);
         display: flex;
@@ -572,11 +573,12 @@
         justify-content: space-between;
         font-size: var(--footerSize);
         z-index: 4;
-        border-top: 1px solid var(--itemBorder);
-        border-left: 1px solid var(--itemBorder);
-        border-right: 1px solid var(--itemBorder);
+        border-top: 1.2px solid #dc143c;
+        border-left: 1.2px solid #dc143c;
+        border-right: 1.2px solid #dc143c;
         border-bottom: none;
         text-align: center; 
+        font-size: calc(var(--buttonSize) * 0.9);
       }
       
       section#buttons {
@@ -688,7 +690,7 @@
       }
       .menu-pinned.menu-open {
         border-radius: var(--buttonQuart) 0 0 var(--buttonQuart);
-        border: 1px solid var(--itemBorder);
+        /*! border: 1px solid var(--itemBorder); */
       }
       .menu-pinnded.menu-closed {
         border-radius: var(--buttonQuart);
@@ -773,22 +775,24 @@
       
       #stream-container {
         margin: var(--buttonQuart) var(--buttonHalf); 
-        border: 1px solid var(--itemBorder);
+        border: 2px solid crimson;
+        border-radius: var(--buttonQuart);
       }
       
       .streamSize {
         position: absolute;
         top: var(--buttonQuart);
         background: var(--buttonReady);
-        width: var(--buttonSize);
-        height: var(--buttonSize);
+        width: calc(var(--buttonSize) * 1.2);
+        height: calc(var(--buttonSize) * 1.2);
         border-radius: calc(var(--buttonSize) * 6);
         color: var(--buttonText);
         text-align: center;
-        line-height: var(--buttonSize);
+        line-height: calc(var(--buttonSize) * 1.2);
         cursor: pointer;
         text-decoration: none;
         z-Index: 1;
+        font-size: calc(var(--buttonSize) * 1.5);
       }
       
       .RCcontrolFmt {
@@ -829,6 +833,7 @@
         bottom: 4px;
       }
 
+    
     </style>
   </head>
   
@@ -1404,7 +1409,7 @@
         <figure>
           <div id="stream-container" class="image-container hidden">
             <div class="streamSize" id="closeStream" title="Close screen">×</div>
-            <div class="streamSize" id="rotate" title="Rotate screen">@</div>
+            <div class="streamSize" id="rotate" title="Rotate screen" style="style="right: 24px;font-size: calc(var(--buttonSize) * 0.8);">@</div>
             <div class="streamSize" id="actualSize" title="Actual size">-</div>
             <div class="streamSize" id="maxFit" title="Fit to browser">#</div>
             <div class="streamSize" id="fullAspect" title="Full screen with aspect">&curren;</div>
