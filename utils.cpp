@@ -104,7 +104,7 @@ static void onWiFiEvent(WiFiEvent_t event) {
     case ARDUINO_EVENT_WIFI_STA_STOP: LOG_INF("Wifi Station stopped %s", ST_SSID); break;
     case ARDUINO_EVENT_WIFI_AP_START: {
       if (!strcmp(WiFi.softAPSSID().c_str(), AP_SSID) || !strlen(AP_SSID)) {
-        LOG_INF("Wifi AP SSID: %s started, use '%s://%s' to connect", WiFi.softAPSSID().c_str(), useHttps ? "https" : "http", WiFi.softAPIP().toString().c_str());
+        LOG_INF("Wifi AP SSID: %s started, use '%s://%s' to connect with password '%s'.", WiFi.softAPSSID().c_str(), useHttps ? "https" : "http", WiFi.softAPIP().toString().c_str(), AP_Pass);
         APstarted = true;
       }
       break;
@@ -735,7 +735,7 @@ void logSetup() {
   // prep logging environment
   Serial.begin(115200);
   Serial.setDebugOutput(DBG_ON);
-  printf("\n\n=============== %s %s ===============\n", APP_NAME, APP_VER);
+  printf("\n\n=============== Delta ESP32-CAM WebServer v%s ===============\n", APP_NAME, APP_VER);
   if (CHECK_MEM) printf("init > Free: heap %u\n", ESP.getFreeHeap()); 
   logSemaphore = xSemaphoreCreateBinary(); // flag that log message formatted
   logMutex = xSemaphoreCreateMutex(); // control access to log formatter

@@ -1,4 +1,4 @@
-appId~ESP-CAM_MJPEG~99~~na
+appId~DELTA_TEMP~99~~na
 ST_SSID~~99~~na
 ftp_port~21~99~~na
 ftp_server~~99~~na

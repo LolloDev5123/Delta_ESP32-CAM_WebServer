@@ -432,15 +432,24 @@ void initStatus(int cfgGroup, int delayVal) {
 
 static void setDefaults() {
   // set default hostname and AP SSID if config is null
+  uint64_t EfuseMac = ESP.getEfuseMac();
+  
   retrieveConfigVal("hostName", hostName);
   if (!strlen(hostName)) {
-    sprintf(hostName, "%s_%012llX", APP_NAME, ESP.getEfuseMac());
+    sprintf(hostName, "%s_%002llX", APP_NAME, EfuseMac);
     updateConfigVect("hostName", hostName);
   }
   retrieveConfigVal("AP_SSID", AP_SSID);
   if (!strlen(AP_SSID)) {
     strcpy(AP_SSID, hostName);
     updateConfigVect("AP_SSID", AP_SSID);
+  }
+
+   if (!strlen(AP_Pass)) {
+    char _ST_Pass_def[MAX_PWD_LEN] = ""; //Default router passd
+    sprintf(_ST_Pass_def, "pasw.%06llX", EfuseMac);
+    strcpy(AP_Pass, _ST_Pass_def);
+    updateConfigVect("AP_Pass", AP_Pass);
   }
 }
 
